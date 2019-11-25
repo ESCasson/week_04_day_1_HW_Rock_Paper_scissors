@@ -8,8 +8,12 @@ get '/' do
   erb(:home)
 end
 
+get '/about-us' do
+  erb(:about_us)
+end
+
 get '/game' do
-  erb(:game_start)
+  erb(:gstart)
 end
 
 
@@ -17,8 +21,4 @@ get '/game/:p1choice' do
 player1 = params['p1choice'].to_s()
 @result = Game.game_logic(player1)
 erb(:game)
-end
-
-get '/about-us' do
-  erb(:about_us)
 end
